@@ -91,10 +91,44 @@ jQuery(document).ready(function($) {
         center:true,
         responsive:{
             480:{
+                items:1
+            },
+            600:{
+                items:2
+            }
+        }
+    })
+    $('.owl-carouselv2').owlCarousel({
+        items:4,
+        merge:true,
+        loop:true,
+        margin:30,
+        video:true,
+        lazyLoad:true,
+        center:true,
+        responsive:{
+            480:{
                 items:2
             },
             600:{
                 items:4
+            }
+        }
+    })
+    $('.owl-carouselv1').owlCarousel({
+        items:4,
+        merge:true,
+        loop:true,
+        margin:30,
+        video:true,
+        lazyLoad:true,
+        center:true,
+        responsive:{
+            480:{
+                items:1
+            },
+            600:{
+                items:1
             }
         }
     })

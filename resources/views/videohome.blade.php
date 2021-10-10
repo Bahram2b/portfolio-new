@@ -8,7 +8,7 @@
 @section('but-2', 'Product videos')
 @section('but-3', 'Motion videos')
 @section('ver-1', 'B - R o l l')
-@section('ver-2', 'P R O D U C T videos')
+@section('ver-2', 'P R O D U C T')
 @section('ver-3', 'M O T I O N')
 
 @section('portfolio', 'Videos')

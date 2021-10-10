@@ -13,14 +13,20 @@
             <div class="col-md-12">
                 <div id="owl-testimonials1" class="owl-carouselv owl-theme">
 
-                    @foreach($motion as $row)
+                    @foreach($broll as $row)
                         <div class="item">
                             <div class="testimonials-item">
                                 <div class="videolightbox-thumb" data-lb-content={{$row->link}} data-lb-content-type="video" style="background-image:url({{'backend/img/clips/thumbnails/'.$row->thumbnail}})">
-                                    <div class="videolightbox-thumb-details">
-                                        <img class="videolightbox-button bg-transparent" src="{{asset('frontend/img/play(2).png')}}" height="100" width="100" alt="">
+                                    <div class="videolightbox-thumb-details mb-1">
+
+
+
+                                            <img class="videolightbox-button bg-transparent lightbox-video-details" src="{{asset('frontend/img/play(2).png')}}" height="100" width="100" alt="">
+
+                                            {{$row->description}}
+
                                     </div>
-                                    <div class="lightbox-video-details">This is some test text describing what this particular video happens to be about.</div>
+
                                 </div>
 
                                 <div class="text-content">
@@ -30,6 +36,7 @@
                             </div>
 
                         </div>
+
                     @endforeach
 
                 </div>
@@ -49,16 +56,21 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div id="owl-testimonials1" class="owl-carouselv owl-theme">
+                <div id="owl-testimonials1" class="owl-carouselv1 owl-theme">
 
                         @foreach($product as $row)
-                            <div class="item">
-                                <div class="testimonials-item">
+                        <div class="item">
+                            <div class="testimonials-item">
                                 <div class="videolightbox-thumb" data-lb-content={{$row->link}} data-lb-content-type="video" style="background-image:url({{'backend/img/clips/thumbnails/'.$row->thumbnail}})">
                                     <div class="videolightbox-thumb-details">
-                                        <img class="videolightbox-button bg-transparent" src="{{asset('frontend/img/play(2).png')}}" height="100" width="100" alt="">
+
+
+                                        <div class="lightbox-video-details">
+                                            <img class="videolightbox-button bg-transparent" src="{{asset('frontend/img/play(2).png')}}" height="100" width="100" alt="">
+                                            {{$row->description}}
+                                        </div>
                                     </div>
-                                    <div class="lightbox-video-details">This is some test text describing what this particular video happens to be about.</div>
+
                                 </div>
 
                                 <div class="text-content">
@@ -67,7 +79,7 @@
 
                             </div>
 
-                            </div>
+                        </div>
                     @endforeach
 
                 </div>
@@ -89,16 +101,21 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div id="owl-testimonials1" class="owl-carouselv owl-theme">
+                <div id="owl-testimonials1" class="owl-carouselv2 owl-theme">
 
-                    @foreach($broll as $row)
+                    @foreach($motion as $row)
                         <div class="item">
                             <div class="testimonials-item">
                                 <div class="videolightbox-thumb" data-lb-content={{$row->link}} data-lb-content-type="video" style="background-image:url({{'backend/img/clips/thumbnails/'.$row->thumbnail}})">
                                     <div class="videolightbox-thumb-details">
-                                        <img class="videolightbox-button bg-transparent" src="{{asset('frontend/img/play(2).png')}}" height="100" width="100" alt="">
+
+
+                                        <div class="lightbox-video-details">
+                                            <img class="videolightbox-button bg-transparent" src="{{asset('frontend/img/play(2).png')}}" height="100" width="100" alt="">
+                                            {{$row->description}}
+                                        </div>
                                     </div>
-                                    <div class="lightbox-video-details">This is some test text describing what this particular video happens to be about.</div>
+
                                 </div>
 
                                 <div class="text-content">

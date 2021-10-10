@@ -1,6 +1,7 @@
 
     <title>Morteza Jelokhani @yield('title') Portfolio </title>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#ff7d27">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="{{asset('frontend/images/icons/favicon.png')}}"/>
@@ -37,17 +38,19 @@
         .title-info-vertical-section {
 
             display: block!important;
-            margin-bottom: 20px!important;
+            margin-bottom: 80px!important;
             transform-origin: left top 0;
             color: #ff7e00;
 
 
             left: 70px;
+
         }
 
         .title-font{
-            font-family: 'Open Sans', sans-serif;
+            font-family: "main-title", serif;
             font-size: 20px;
+            font-weight: bold!important;
             text-shadow: 4px 4px 4px #aaa;
         }
 
@@ -59,14 +62,7 @@
             animation: glow 1s ease-in-out infinite alternate;
         }
         @media (max-width: 767px){
-            title-info-vertical-section {
-                transform: rotate(180deg);
-                transform-origin: left top 0;
-                color: #ff7e00;
-                display: inline-block;
-                position: absolute;
-                left: 70px;
-            }
+
 
         }
         @-webkit-keyframes glow {
