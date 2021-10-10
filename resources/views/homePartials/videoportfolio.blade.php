@@ -6,7 +6,7 @@
     <div class="container">
         <div class="sec-title">
             <div class="title-vertical">
-                <p><span class="title-info-vertical-section title-font glow"> ─ Motion</span></p>
+                <p><span class="title-info-vertical-section title-font glow text-capitalize"> ─ @yield('ver-1')</span></p>
             </div>
         </div>
         <div class="row">
@@ -42,6 +42,11 @@
 <!-- portrait -->
 <div class=" portrait-content" id="sec-2">
     <div class="container">
+        <div class="sec-title">
+            <div class="title-vertical">
+                <p><span class="title-info-vertical-section title-font glow text-capitalize"> ─ @yield('ver-2')</span></p>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div id="owl-testimonials1" class="owl-carouselv owl-theme">
@@ -77,6 +82,11 @@
 
 
     <div class="container">
+        <div class="sec-title">
+            <div class="title-vertical">
+                <p><span class="title-info-vertical-section title-font glow text-capitalize"> ─ @yield('ver-3')</span></p>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div id="owl-testimonials1" class="owl-carouselv owl-theme">

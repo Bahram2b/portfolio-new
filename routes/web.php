@@ -39,14 +39,14 @@ Route::get('/', function () {
 //    return view('dashboard');
 //});
 Route::get('/photo-portfolio', function () {
-    $portraits=Photo::where('category',"Portrait")->get();
-    $manipulation=Photo::where('category',"Photo Manipulation")->get();
-    $product=Photo::where('category',"Product Photography")->get();
+    $portraits=Photo::where('category',"Portrait")->latest()->get();
+    $manipulation=Photo::where('category',"Photo Manipulation")->latest()->get();
+    $product=Photo::where('category',"Product Photography")->latest()->get();
     return view('photohome',compact('portraits','product','manipulation'));})->name('Photo.Portfolio');
 Route::get('/video-portfolio', function () {
-    $broll=Clip::where('category',"Broll")->get();
-    $motion=Clip::where('category',"Motion")->get();
-    $product=Clip::where('category',"Product")->get();
+    $broll=Clip::where('category',"Broll")->latest()->get();
+    $motion=Clip::where('category',"Motion")->latest()->get();
+    $product=Clip::where('category',"Product")->latest()->get();
 
     return view('videohome',compact('broll','motion','product'));})->name('Video.Portfolio');
 
