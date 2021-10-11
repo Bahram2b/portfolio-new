@@ -87,6 +87,11 @@
     </svg>
 </div>
 <div class="container">
+    <div class="load">
+        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+        </svg>
+    </div>
     <section class="screen left tiles">
 
 {{--        <img src="frontend/landing/img/left.jpg" />--}}
@@ -94,7 +99,7 @@
         <div class="info">
 
             <button>
-                <a href="{{route('Photo.Portfolio')}}" class="button">Edited photos</a>
+                <a href="{{route('Photo.Portfolio')}}" class="button">Photography</a>
             </button>
         </div>
     </section>
@@ -102,7 +107,7 @@
         <div class="info">
 {{--            <h1 class="white-wine">White Wines</h1>--}}
             <button>
-                <a href="{{route('Video.Portfolio')}}" class="button">Edited Videos</a>
+                <a href="{{route('Video.Portfolio')}}" class="button">Videography</a>
             </button>
         </div>
     </section>

@@ -38,27 +38,7 @@
     }
 
 </style>
-<div class="horizontal-scroll2">
-    <div class="horizontal-scroll"></div>
-</div>
-<footer id="contact-us">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="primary-button">
-                    <a href="#home">Back To Top</a>
-                </div>
-                <ul>
-                    <li><a href="#"><i class="fa fa-telegram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google"></i></a></li>
+{{--<div class="horizontal-scroll2">--}}
+{{--    <div class="horizontal-scroll"></div>--}}
+{{--</div>--}}
 
-                </ul>
-                <p>Copyright &copy; 2021 Mory studio
-
-                    - Design: <a rel="nofollow noopener" href="#"><em>Mory studio</em></a></p>
-            </div>
-        </div>
-    </div>
-</footer>

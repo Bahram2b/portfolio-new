@@ -59,10 +59,10 @@
 <!-- portrait -->
 
 <!-- portfolio -->
-<div class="product-content" id="sec-3">
+<div class="product-content pb-0" id="sec-3">
 
 
-    <div class="container">
+    <div class="container " style="padding-bottom: 60px">
         <div class="sec-title">
             <div class="title-vertical">
                 <p><span class="title-info-vertical-section title-font glow text-capitalize" > ─ P r o d u c T </span></p>
@@ -85,7 +85,28 @@
             </div>
         </div>
     </div>
+    <footer id="contact-us" class="footer-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="primary-button">
+                        <a href="#home">Back To Top</a>
+                    </div>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-telegram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google"></i></a></li>
+
+                    </ul>
+                    <p>Copyright &copy; 2021 Mory studio
+
+                        - Design: <a rel="nofollow noopener" href="#"><em>Mory studio</em></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </div>
 <!-- portfolio -->
-
 
