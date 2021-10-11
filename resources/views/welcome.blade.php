@@ -94,7 +94,7 @@
         <div class="info">
 
             <button>
-                <a href="{{route('Photo.Portfolio')}}" class="button">Edited photos</a>
+                <a href="{{route('Photo.Portfolio')}}" class="button">Photography</a>
             </button>
         </div>
     </section>
@@ -102,7 +102,7 @@
         <div class="info">
 {{--            <h1 class="white-wine">White Wines</h1>--}}
             <button>
-                <a href="{{route('Video.Portfolio')}}" class="button">Edited Videos</a>
+                <a href="{{route('Video.Portfolio')}}" class="button">Videography</a>
             </button>
         </div>
     </section>
