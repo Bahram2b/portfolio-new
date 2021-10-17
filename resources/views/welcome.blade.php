@@ -87,29 +87,82 @@
     </svg>
 </div>
 <div class="container">
-    <div class="load">
-        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
-        </svg>
-    </div>
+
+
     <section class="screen left tiles">
 
 {{--        <img src="frontend/landing/img/left.jpg" />--}}
+        <a class="svg-photo" href="{{route('Photo.Portfolio')}}"><svg
+            x="0px" y="0px" width="160px" height="250px" viewBox="0 0 400 500" style="enable-background:new 0 0 455 455;"
+            xml:space="preserve">
+
+            <defs>
+            </defs>
+            <circle class="st0" cx="200" cy="230" r="100"/>
+            <circle class="st1" cx="200" cy="230" r="105">
+                <animate attributeName="r" from="105" to="130" begin="0s" dur="1s" repeatCount="indefinite"/>
+                <animate attributeName="opacity"
+                         from="0.15"
+                         to="0"
+                         dur="1s"
+                         begin="0s"
+                         repeatCount="indefinite"
+                         fill="freeze"
+                         id="circ-anim"
+                />
+            </circle>
+            {{--            <text class="text" x="90" y="70"--}}
+            {{--                  style="fill: #34495e;"--}}
+            {{--                  font-family="Helvetica Neue"--}}
+            {{--                  font-weight="bold"--}}
+            {{--                  font-size="55">--}}
+            {{--                Tap here--}}
+            {{--            </text>--}}
+
+</svg></a>
 
         <div class="info">
-
             <button>
-                <a href="{{route('Photo.Portfolio')}}" class="button">Photography</a>
+                <a href="{{route('Photo.Portfolio')}}" class="button"></a>
             </button>
         </div>
+
     </section>
     <section class="screen right">
+        <a class="svg-photo" href="{{route('Video.Portfolio')}}"><svg
+                x="0px" y="0px" width="160px" height="250px" viewBox="0 0 400 500" style="enable-background:new 0 0 455 455;"
+                xml:space="preserve">
+
+            <defs>
+            </defs>
+                <circle class="st0" cx="200" cy="230" r="100"/>
+                <circle class="st1" cx="200" cy="230" r="105">
+                    <animate attributeName="r" from="105" to="130" begin="0s" dur="1s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity"
+                             from="0.15"
+                             to="0"
+                             dur="1s"
+                             begin="0s"
+                             repeatCount="indefinite"
+                             fill="freeze"
+                             id="circ-anim"
+                    />
+                </circle>
+                {{--            <text class="text" x="90" y="70"--}}
+                {{--                  style="fill: #34495e;"--}}
+                {{--                  font-family="Helvetica Neue"--}}
+                {{--                  font-weight="bold"--}}
+                {{--                  font-size="55">--}}
+                {{--                Tap here--}}
+                {{--            </text>--}}
+
+</svg></a>
         <div class="info">
-{{--            <h1 class="white-wine">White Wines</h1>--}}
             <button>
-                <a href="{{route('Video.Portfolio')}}" class="button">Videography</a>
+                <a href="{{route('Video.Portfolio')}}" class="button"></a>
             </button>
         </div>
+
     </section>
 </div>
 

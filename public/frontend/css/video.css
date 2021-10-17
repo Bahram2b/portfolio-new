@@ -1,0 +1,123 @@
+
+@media (max-width: 600px) {
+
+    .videolightbox-thumb{
+
+        /*min-height: 400px;*/
+        height: 220px!important;
+        min-width: 270px;
+        background-size: 100%;
+        overflow:no-display!important;
+        border: 4px solid rgba(0, 0, 0, 0.64);
+    }
+
+    .videolightbox-thumb{
+        display: block!important;
+    }
+
+
+
+}
+.video-portfolio .container{
+    padding-top: 16vh;
+}
+.video-portfolio .sec2-content .container{
+    padding-top: 26vh;
+}
+
+
+.videolightbox-thumb {
+   width: 100%!important;
+
+    max-height: 150px;
+    min-height: 148px;
+    overflow: hidden;
+    /*background-image: url(https://i.ytimg.com/vi/Z0X2FyRl-9s/maxresdefault.jpg);*/
+    background-size: 100%;
+    background-position: 50% 50%;
+    transition: background-size 0.3s ease-in-out;
+    z-index: 1;
+    display: inline-block;
+}
+
+.videolightbox-thumb:hover {
+    background-size: 110%;
+}
+.videolightbox-thumb-details{
+    font-size: 12px!important;
+}
+.videolightbox-thumb:hover .videolightbox-thumb-details {
+    opacity: 1;
+    transform: scale(1);
+
+}
+.videolightbox-thumb .videolightbox-thumb-details {
+
+background-color: rgba(51, 41, 42, 0.55);
+    padding: 5px;
+
+    text-align: center;
+    opacity: 0;
+    transform: scale(1.2);
+    transform-origin: center;
+    transition: all 0.3s ease-in-out;
+}
+.desc{
+    margin-bottom: 9px;
+    color: #ffffff;
+    font-size: larger;
+}
+.videolightbox-thumb .videolightbox-thumb-details .videolightbox-button {
+
+    min-width: 100px!important;
+    min-height: 130px!important;
+    display: block!important;
+
+    cursor: pointer;
+    margin: auto;
+}
+.videolightbox-thumb .videolightbox-thumb-details .videolightbox-video-details {
+    font-size: 0.9rem;
+}
+.videolightbox {
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: table;
+    opacity: 0;
+    z-index: 100;
+}
+.videolightbox .videolightbox-inner {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+.videolightbox .lb-content {
+    padding: 10px;
+    height: auto;
+    margin: auto;
+    max-width: 800px;
+    color: black;
+    text-align: center;
+}
+.videolightbox .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+    border-radius: 5px;
+    background: white;
+}
+.videolightbox .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

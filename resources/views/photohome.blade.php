@@ -3,5 +3,18 @@
 @section('title', 'Photo')
 
 @section('home_content')
+@section('title', 'Photos')
+@section('sec-1', 'Portraits')
+@section('sec-2', 'Manipulations Photos')
+@section('sec-3', 'Commercial Photos')
+@section('sec-4', 'Music Photos')
+@section('but-1', 'Portraits Photos')
+@section('but-2', 'Manipulations Photos')
+@section('but-3', 'Commercial Photos')
+@section('but-4', 'Music Covers')
+@section('ver-1', 'P O R T R A I T S')
+@section('ver-2', 'M A N I P U L A I I O N')
+@section('ver-3', 'C O M M E R C I A L')
+@section('ver-4', 'M U S I C  -  C O V E R S')
     @include('homePartials.photoportfolio')
 @endsection

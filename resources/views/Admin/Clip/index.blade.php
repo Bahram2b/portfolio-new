@@ -87,8 +87,9 @@
                                 <label for="category">Category</label>
                                 <select id="category" name="category">
                                     <option value="Broll">B-rolls</option>
-                                    <option value="Product">Products</option>
+                                    <option value="Product">Commercial</option>
                                     <option value="Motion">Motions</option>
+                                    <option value="Music">Music Videos</option>
                                 </select><br>
                                 <label for="description">description</label>
 
@@ -141,8 +142,9 @@
                                 <label for="category">Category</label>
                                 <select class="form-control" id="editcategory" name="category">
                                     <option value="Broll">B-rolls</option>
-                                    <option value="Product">Products</option>
+                                    <option value="Product">Commercial</option>
                                     <option value="Motion">Motions</option>
+                                    <option value="Music">Music Videos</option>
                                 </select>
 
                                 <div class="form-group">
@@ -194,7 +196,7 @@
             //Prefill the fields with the gathered information
             $('h5.modal-title').html('ویرایش : '+title);
             $('#edittitle').val(title);
-            $("#editcategory").val(category).attr('Broll', 'Product','Motion');
+            $("#editcategory").val(category).attr('Broll', 'Product','Motion','Music');
 
             // $('#editimage').val(image);
             $('#editdescription').val(description);

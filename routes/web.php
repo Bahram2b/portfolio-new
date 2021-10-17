@@ -42,13 +42,15 @@ Route::get('/photo-portfolio', function () {
     $portraits=Photo::where('category',"Portrait")->latest()->get();
     $manipulation=Photo::where('category',"Photo Manipulation")->latest()->get();
     $product=Photo::where('category',"Product Photography")->latest()->get();
-    return view('photohome',compact('portraits','product','manipulation'));})->name('Photo.Portfolio');
+    $music=Photo::where('category',"Music")->latest()->get();
+    return view('photohome',compact('portraits','product','manipulation','music'));})->name('Photo.Portfolio');
 Route::get('/video-portfolio', function () {
     $broll=Clip::where('category',"Broll")->latest()->get();
     $motion=Clip::where('category',"Motion")->latest()->get();
     $product=Clip::where('category',"Product")->latest()->get();
+    $music=Clip::where('category',"Music")->latest()->get();
 
-    return view('videohome',compact('broll','motion','product'));})->name('Video.Portfolio');
+    return view('videohome',compact('broll','motion','product','music'));})->name('Video.Portfolio');
 
 
 

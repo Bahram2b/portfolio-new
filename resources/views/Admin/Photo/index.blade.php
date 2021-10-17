@@ -85,7 +85,8 @@
                         <select id="category" name="category">
                             <option value="Portrait">Portrait</option>
                             <option value="Photo Manipulation">Photo Manipulation</option>
-                            <option value="Product Photography">Product Photography</option>
+                            <option value="Product Photography">Commercial Photography</option>
+                            <option value="Music">Music Covers</option>
                         </select><br>
                         <label for="description">Description</label>
                         <input type="text" class="form-control" id="description" aria-describedby="emailHelp" placeholder="This is the description of the " name="description">
@@ -135,8 +136,8 @@
                             <label for="category">Category</label>
                             <select class="form-control" id="editcategory" name="category">
                                 <option value="Portrait">Portrait</option>
-                                <option value="Photo Manipulation">Photo Manipulation</option>
-                                <option value="Product Photography">Product Photography</option>
+                                <option value="Product Photography">Commercial Photography</option>
+                                <option value="Music">Music Covers</option>
                             </select>
                             <div class="form-group">
                                 <label for="description">description</label>
@@ -187,7 +188,7 @@
                 //Prefill the fields with the gathered information
                 $('h5.modal-title').html('Editing Photo : '+title);
                 $('#edittitle').val(title);
-                $("#editcategory").val(category).attr('Portrait', 'Photo Manipulation','Product Photography');
+                $("#editcategory").val(category).attr('Portrait', 'Photo Manipulation','Product Photography','Music');
 
                 $('#editimage').val(image);
                 $('#editdescription').val(description);

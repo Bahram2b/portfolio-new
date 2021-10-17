@@ -6,7 +6,7 @@
 
 
 <!--===============================================================================================-->
-<script src="{{asset('frontend/js/vendor/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('frontend/js/plugins.js')}}"></script>
 
 

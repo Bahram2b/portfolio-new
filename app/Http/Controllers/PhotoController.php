@@ -45,7 +45,7 @@ class PhotoController extends Controller
         }
         $photo->save();
         $notification=array(
-            'message'=>'عکس اضافه شد',
+            'message'=>'Photo added',
             'alert-type'=>'success'
         );
 //        $photo=Slider::paginate(6);
@@ -75,7 +75,7 @@ class PhotoController extends Controller
         $data->description=$request->description;
         $data->save();
         $notification=array(
-            'message'=>'مشخصات عکس ویرایش شد',
+            'message'=>'Info Edited bitch',
             'alert-type'=>'success'
         );
         return Redirect()->back()->with($notification);
@@ -90,7 +90,7 @@ class PhotoController extends Controller
             unlink($pathdelete);
             Photo::destroy($id);
             $notification=array(
-                'message'=>'عکس حذف شد',
+                'message'=>'Photo deleted',
                 'alert-type'=>'info'
             );
 //        $photo=Slider::paginate(6);

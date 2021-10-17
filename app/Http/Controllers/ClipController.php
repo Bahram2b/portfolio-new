@@ -26,6 +26,7 @@ class ClipController extends Controller
     {
         $clip= new Clip();
         $clip->description=$request->description;
+        $clip->category=$request->category;
         $clip->title=$request->title;
         $clip->link=$request->link;
         $file=$request->file('thumbnail');
@@ -43,7 +44,7 @@ class ClipController extends Controller
         }
         $clip->save();
         $notification=array(
-            'message'=>'ویدیو اضافه شد',
+            'message'=>'Video added',
             'alert-type'=>'success'
         );
 //        $clip=Slider::paginate(6);
@@ -72,7 +73,7 @@ class ClipController extends Controller
         $data->link=$request->link;
         $data->save();
         $notification=array(
-            'message'=>'مشخصات ویدیو ویرایش شد',
+            'message'=>'video info edited',
             'alert-type'=>'success'
         );
         return Redirect()->back()->with($notification);
@@ -86,7 +87,7 @@ class ClipController extends Controller
             unlink($pathdelete);
             Clip::destroy($id);
             $notification=array(
-                'message'=>'ویریو حذف شد',
+                'message'=>'video deleted',
                 'alert-type'=>'info'
             );
 //        $clip=Slider::paginate(6);
