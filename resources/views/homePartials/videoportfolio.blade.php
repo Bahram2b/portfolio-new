@@ -2,7 +2,7 @@
 
 <!-- manipulation -->
 <div class="video-portfolio">
-<div class="sec1-content  " id="sec-1">
+<div class="sec1-content" id="sec-1">
 
     <div class="container">
         <div class="sec-title">

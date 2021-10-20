@@ -6,7 +6,7 @@
 <div class="sec1-content" id="sec-1">
     <div class="sec-title">
         <div class="title-vertical">
-            <p><span class="title-info-vertical-section title-font glow"> ─  @yield('ver-2')</span></p>
+            <p><span class="title-info-vertical-section title-font glow"> ─  @yield('ver-1')</span></p>
         </div>
     </div>
     <div class="container">
@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div id="owl-testimonials" class="owl-carousel owl-theme">
-                    @foreach($manipulation as $row)
+                    @foreach($portraits as $row)
                         <div class="item">
                             <div class="testimonials-item">
 
@@ -37,13 +37,13 @@
     <div class="container">
         <div class="sec-title">
             <div class="title-vertical">
-                <p><span class="title-info-vertical-section title-font glow text-capitalize"> ─ P o r t r a i t</span></p>
+                <p><span class="title-info-vertical-section title-font glow text-capitalize"> ─ @yield('ver-2')</span></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div id="owl-testimonials2" class="owl-carousel owl-theme">
-                    @foreach($portraits as $row)
+                    @foreach($manipulation as $row)
                         <div class="item">
                             <div class="testimonials-item">
 

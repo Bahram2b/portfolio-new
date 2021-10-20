@@ -10,7 +10,7 @@
                 <a class="orange" href="#sec-1">@yield('but-1')</a>
                 <a href="#sec-2">@yield('but-2') </a>
                 <a href="#sec-3">@yield('but-3')</a>
-                <a href="#sec-3">@yield('but-4')</a>
+                <a href="#sec-4">@yield('but-4')</a>
 {{--                <a href={{route('Dashboard')}}>Dashboard</a>--}}
 {{--                <a href={{route('Photo.Portfolio')}}>Photo Portfolio</a>--}}
 {{--                <a href={{route('Video.Portfolio')}}>Video Portfolio</a>--}}

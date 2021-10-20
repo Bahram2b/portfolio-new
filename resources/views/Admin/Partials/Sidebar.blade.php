@@ -29,16 +29,19 @@
                     <span class="nav-label">Photos</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="{{route('Photo.index')}}">Management</a>
+                        <a href="{{url('/photo/management/index')}}">Photos Management</a>
                     </li>
                     <li>
-                        <a href="">Portraits</a>
+                        <a href="{{url('/photo/management/portraits')}}">Broll videos</a>
                     </li>
                     <li>
-                        <a href="">Photo Manipulations</a>
+                        <a href="{{url('/photo/management/manipulations')}}">Music videos</a>
                     </li>
                     <li>
-                        <a href="">Product Photographs</a>
+                        <a href="{{url('/photo/management/commercials')}}">Commercials Photographs</a>
+                    </li>
+                    <li>
+                        <a href="{{url('/photo/management/musics')}}">Motion videos</a>
                     </li>
                 </ul>
             </li>
@@ -47,14 +50,26 @@
                     <span class="nav-label">Videos</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="{{route('Clip.index')}}">Management</a>
+                        <a href="{{url('/clip/management/index')}}">Videos Management</a>
+                    </li>
+                    <li>
+                        <a href="{{url('/clip/management/brolls')}}">Broll videos</a>
+                    </li>
+                    <li>
+                        <a href="{{url('/clip/management/musics')}}">Music videos</a>
+                    </li>
+                    <li>
+                        <a href="{{url('/clip/management/commercials')}}">Commercials videos</a>
+                    </li>
+                    <li>
+                        <a href="{{url('/clip/management/motions')}}">Motion videos</a>
                     </li>
 
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-hamburger"></i>
-                    <span class="nav-label">Profile Edit</span><i class="fa fa-angle-left arrow"></i></a>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-edit"></i>
+                    <span class="nav-label">Profile</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
                         <a href="{{route('admin.pass')}}">Change Password</a>

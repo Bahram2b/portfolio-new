@@ -18,9 +18,9 @@ body    {
     font-family: sans-serif;
 
 }
-body {
-    overflow-x: hidden;
-    width: 100%;
+html, body {
+    overflow-x: hidden!important;
+    width: 100%!important;
 }
 
 
@@ -71,10 +71,7 @@ body {
     -moz-animation: glow 0.5s ease-in-out infinite alternate;
     animation: glow 0.5s ease-in-out infinite alternate;
 }
-@media (max-width: 767px){
 
-
-}
 @-webkit-keyframes glow {
     from {
         text-shadow: 0 0 10px rgba(255, 126, 0, 0.46), 0 0 20px rgba(255, 126, 0, 0.87), 0 0 30px rgba(255, 126, 0, 0.49), 0 0 40px #ff7d00, 0 0 50px rgba(255, 126, 0, 0.64), 0 0 60px #bf5c00, 0 0 70px rgba(246, 131, 22, 0.78);
@@ -270,7 +267,7 @@ body {
           animation-name: fadeInRight;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 600px) {
    .baner-content .primary-button a{
         display: block!important;
         margin-bottom: 10px!important;
@@ -324,23 +321,93 @@ margin:5px;
 }
 
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
     .baner-content {
         padding-top: 15vh!important;
+        background-image: url(../img/mory-middlemobile.jpg);
         text-align: center;
-        background-image: url(../img/mory-middle.jpg);
+
     }
     .baner-content em {
         color: #ff7d27;
         font-weight: 700;
         font-style: normal;
     }
+    .sec1-content {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 8vh;
+        background-image: url(../img/handmobile.jpg)!important;
+
+
+    }
+    .sec2-content {
+
+        background-image: url(../img/handblurmobile.jpg)!important;
+        background-size: cover;
+        min-height: 100vh;
+        position: relative;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+
+
+    }
+    .sec3-content {
+
+        padding-top: 8vh;
+        background-image: url(../img/manipulationmobile.jpg)!important;
+        background-attachment: fixed;
+        min-height: 190vh;
+
+
+        background-size: cover;
+        background-position: center center;
+    }
+    .sec4-content {
+        padding: 20vh 15px;
+
+        background-color: rgba(42, 47, 51, 0.55);
+        min-height: 40vh;
+
+    }
 
 }
-.baner-content {
-  padding-top: 23vh;
-  text-align: center;
-  background-image: url(../img/mory-middle.jpg);
+
+@media (min-width: 600px) {
+    .baner-content {
+        padding-top: 23vh;
+        text-align: center;
+        background-image: url(../img/mory-middle.jpg);
+
+    }
+
+
+    .baner-content em {
+        color: #ff7d27;
+        font-weight: 700;
+        font-style: normal;
+    }
+    .sec1-content {
+
+        background-image: url(../img/hand.jpg);
+
+    }
+    .sec2-content {
+
+        background-image: url(../img/handblur.jpg);
+
+
+
+    }
+    .sec3-content {
+
+
+        background-image: url(../img/manipulation.jpg);
+
+    }
+
+
 }
 
 .baner-content h1 {
@@ -351,6 +418,7 @@ margin:5px;
   font-weight: 1000;
   margin-bottom: 0px;
 }
+
 
 .baner-content em {
 
@@ -688,7 +756,7 @@ footer em {
 
 
 
-@media (max-width: 700px){
+@media (max-width: 600px){
     .title-font {
       font-size: 22px;
         letter-spacing: 2px;

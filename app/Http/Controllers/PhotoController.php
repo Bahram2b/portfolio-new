@@ -10,11 +10,43 @@ use Intervention\Image\Facades\Image;
 class PhotoController extends Controller
 {
 
-    public function index()
-    {
-        $photo=Photo::latest()->paginate(10);
-        return view('Admin.Photo.index',compact('photo'));
+    public function index($cat){
+      switch ($cat){
+          case('manipulations'): $photo = Photo::latest()->where('category', "Photo Manipulation")->paginate(15);
+          break;
+          case('index'):  $photo=Photo::latest()->paginate(15);
+              break;
+          case('portraits'):$photo=Photo::latest()->where('category',"Portrait")->paginate(15);
+              break;
+          case('commercials'):$photo=Photo::latest()->where('category',"Product Photography")->paginate(15);
+              break;
+          case('musics'):$photo=Photo::latest()->where('category',"Music")->paginate(15);
+              break;
+      }
+//
+//     if ($cat='manipulations') {
+//         $photo = Photo::latest()->where('category', "Photo Manipulation")->paginate(15);
+//
+//     }
+//        elseif ($cat='portraits'){
+//      $photo=Photo::latest()->where('category',"Portrait")->paginate(15);
+//
+//         }
+//     elseif ($cat='commercials'){
+//            $photo=Photo::latest()->where('category',"Product Photography")->paginate(15);
+//
+//        }
+//     elseif($cat='musics'){
+//            $photo=Photo::latest()->where('category',"Music")->paginate(15);
+//        }
+//     elseif ($cat='index'){
+//            $photo=Photo::latest()->paginate(15);
+//        }
+
+
+        return view('admin.photo.index',compact('photo'));
     }
+
 
 
     public function create()

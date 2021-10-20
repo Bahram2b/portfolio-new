@@ -84,7 +84,7 @@
                         <label for="category">Category</label>
                         <select id="category" name="category">
                             <option value="Portrait">Portrait</option>
-                            <option value="Photo Manipulation">Photo Manipulation</option>
+                            <option value="Photo Manipulation">Manipulation photos</option>
                             <option value="Product Photography">Commercial Photography</option>
                             <option value="Music">Music Covers</option>
                         </select><br>
@@ -137,12 +137,16 @@
                             <select class="form-control" id="editcategory" name="category">
                                 <option value="Portrait">Portrait</option>
                                 <option value="Product Photography">Commercial Photography</option>
+                                <option value="Photo Manipulation">Manipulation photos</option>
                                 <option value="Music">Music Covers</option>
                             </select>
+                            check
                             <div class="form-group">
-                                <label for="description">description</label>
+                                <label for="editdescription">description</label>
                                 <input type="text" name="description" class="form-control" id="editdescription" placeholder="description">
                             </div>
+{{--                            <input type="checkbox" id="renew" name="renew" >--}}
+{{--                            <label for="renew">Renew</label><br>--}}
 {{--                            <label for="image">عکس</label>--}}
 {{--                            <input type="text"  name="image" class="form-control" id="editimage"  >--}}
 

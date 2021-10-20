@@ -10,10 +10,22 @@ use Intervention\Image\Facades\Image;
 class ClipController extends Controller
 {
 
-    public function index()
+    public function index($cat)
     {
-        $clip=Clip::latest()->paginate(11);
-        return view('Admin.Clip.index',compact('clip'));
+        switch ($cat){
+            case('brolls'): $clip = Clip::latest()->where('category',"Broll")->paginate(15);
+                break;
+            case('index'):  $clip=Clip::latest()->paginate(15);
+                break;
+            case('motions'):$clip=Clip::latest()->where('category',"Motion")->paginate(15);
+                break;
+            case('commercials'):$clip=Clip::latest()->where('category',"Product")->paginate(15);
+                break;
+            case('musics'):$clip=Clip::latest()->where('category',"Music")->paginate(15);
+                break;
+        }
+
+        return view('admin.clip.index',compact('clip'));
     }
 
 

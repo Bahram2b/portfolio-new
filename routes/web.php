@@ -60,17 +60,17 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
             return view('admin.index',compact('user'));})->name('Dashboard');
 // Admin routes
-Route::middleware(['auth:sanctum', 'verified'])->get('/photo/management', [PhotoController::class,'index'])->name('Photo.index');
+Route::middleware(['auth:sanctum', 'verified'])->get('/photo/management/{cat}', [PhotoController::class,'index'])->name('Photo.index');
 Route::post('/photo/add', [PhotoController::class,'store'])->name('Photo.Store');
 Route::post('/photo/edit', [PhotoController::class,'create'])->name('Photo.Edit');
 Route::middleware(['auth:sanctum', 'verified'])->get('delete/photo/{id}', [PhotoController::class,'destroy'])->name('Photo.Destroy');
-Route::middleware(['auth:sanctum', 'verified'])->get('photo/update/{id}', [PhotoController::class,'update'])->name('Photo.Update');
+Route::middleware(['auth:sanctum', 'verified'])->get('photo/management/update/{id}', [PhotoController::class,'update'])->name('Photo.Update');
 
 // Admin Clips
-Route::middleware(['auth:sanctum', 'verified'])->get('/clip/management', [ClipController::class,'index'])->name('Clip.index');
+Route::middleware(['auth:sanctum', 'verified'])->get('/clip/management/{cat}', [ClipController::class,'index'])->name('Clip.index');
 Route::post('/clip/Add', [ClipController::class,'store'])->name('Clip.Store');
 Route::middleware(['auth:sanctum', 'verified'])->get('delete/clip/{id}', [ClipController::class,'destroy'])->name('Clip.Destroy');
-Route::middleware(['auth:sanctum', 'verified'])->get('clip/clipupdate/{id}', [ClipController::class,'update'])->name('Clip.Update');
+Route::middleware(['auth:sanctum', 'verified'])->get('clip/management/clipupdate/{id}', [ClipController::class,'update'])->name('Clip.Update');
 //Admin Profile
 Route::get('/Admin/ChangePassword/', [ProfileController::class,'AdminChangePass'])->name('admin.pass');
 Route::get('/Admin/ChangeProfile/', [ProfileController::class,'AdminChangeProfile'])->name('admin.profile');

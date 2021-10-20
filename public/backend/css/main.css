@@ -1,28 +1,32 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
-@import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
-@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+/*@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");*/
+/*@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");*/
+/*@import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);*/
+/*@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);*/
+
+/*@font-face {*/
+/*    font-family: "main-title";*/
+/*    src: url("../../../public/fonts/Montserrat-Bold.ttf");*/
+/*}@font-face {*/
+/*    font-family: "main-title-bold";*/
+/*    src: url("../../../public/fonts/Raleway-ExtraBold.ttf");*/
+
+/*}*/
+/*@font-face {*/
+/*    font-family: "main-texts";*/
+/*    src: url("../../../public/fonts/Montserrat/Montserrat-Black.ttf");*/
+/*}*/
 .orange{
     color: #ff7b00;
 }
-@font-face {
-    font-family: "main-title";
-    src: url("../../../public/fonts/Montserrat-Bold.ttf");
-}@font-face {
-    font-family: "main-title-bold";
-    src: url("../../../public/fonts/Raleway-ExtraBold.ttf");
+body{
+    font-family: sans-serif!important;
+}
+/*.main-title{*/
+/*    font-family: "main-title", serif;!important;*/
+/*   font-weight: bold;*/
+/*    font-size: larger ;*/
 
-}
-@font-face {
-    font-family: "main-texts";
-    src: url("../../../public/fonts/Montserrat/Montserrat-Black.ttf");
-}
-.main-title{
-    font-family: "main-title", serif;!important;
-   font-weight: bold;
-    font-size: larger ;
-
-}
+/*}*/
 select{
     background: #2e3236!important;
     -webkit-transition: all 0.3s ease-in-out!important;
