@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Photo;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -103,6 +104,9 @@ class PhotoController extends Controller
 
         $data=Photo::findOrNew($id);
         $data->category=$request->category;
+        if ($request->renew) {
+            $data->created_at=Carbon::now()->timestamp;
+        }
         $data->title=$request->title;
         $data->description=$request->description;
         $data->save();

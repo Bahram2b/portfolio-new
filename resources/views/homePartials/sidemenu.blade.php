@@ -7,6 +7,6 @@
         <li class="nav-item"><a class="nav-link" href="#sec-2"><span>@yield('sec-2')</span></a></li>
         <li class="nav-item"><a class="nav-link" href="#sec-3"><span>@yield('sec-3')</span></a></li>
         <li class="nav-item"><a class="nav-link" href="#sec-4"><span>@yield('sec-4')</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact-me"><span>Contact Me</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact"><span>Contact Me</span></a></li>
     </ul>
 </div>

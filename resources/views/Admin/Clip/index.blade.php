@@ -124,7 +124,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="ModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -154,6 +154,8 @@
                                     <label for="link">link</label>
                                     <input type="text" class="form-control" id="editlink"   name="link">
                                 </div>
+                                <input type="checkbox" id="renew" name="renew" >
+                                <label for="renew">Renew</label><br><br>
                                 {{--                            <label for="image">عکس</label>--}}
                                 {{--                            <input type="text"  name="image" class="form-control" id="editimage"  >--}}
 
@@ -163,7 +165,7 @@
                             {{--//                        echo $random;--}}
                             {{--//                        ?>--}}
                             <div class="modal-footer">
-                                <a  class="btn btn-secondary" data-dismiss="modal">Close</a>
+                                <a  class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
                                 <button type="submit"  id="saveModalButton" class="btn btn-primary" data-dismiss="modal">Save changes</button>
                             </div>
                         </form>
@@ -194,7 +196,7 @@
             // var level = tr.cells[5].textContent;
 
             //Prefill the fields with the gathered information
-            $('h5.modal-title').html('ویرایش : '+title);
+            $('h5.modal-title').html('Editing: '+title);
             $('#edittitle').val(title);
             $("#editcategory").val(category).attr('Broll', 'Product','Motion','Music');
 

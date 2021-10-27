@@ -32,10 +32,10 @@
                         <a href="{{url('/photo/management/index')}}">Photos Management</a>
                     </li>
                     <li>
-                        <a href="{{url('/photo/management/portraits')}}">Broll videos</a>
+                        <a href="{{url('/photo/management/portraits')}}">Portraits</a>
                     </li>
                     <li>
-                        <a href="{{url('/photo/management/manipulations')}}">Music videos</a>
+                        <a href="{{url('/photo/management/manipulations')}}">Manipulations photos</a>
                     </li>
                     <li>
                         <a href="{{url('/photo/management/commercials')}}">Commercials Photographs</a>

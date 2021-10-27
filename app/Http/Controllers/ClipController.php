@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Clip;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -81,6 +82,9 @@ class ClipController extends Controller
         $data=Clip::findOrNew($id);
         $data->category=$request->category;
         $data->title=$request->title;
+        if ($request->renew) {
+            $data->created_at=Carbon::now()->timestamp;
+        }
         $data->description=$request->description;
         $data->link=$request->link;
         $data->save();

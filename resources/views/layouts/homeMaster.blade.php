@@ -7,6 +7,12 @@
 </head>
 <body>
 
+@section('sidemenu')
+
+
+    @include('homePartials.sidemenu')
+@show
+
 {{--<body class="animsition">--}}
 
 <!-- Header -->
@@ -14,9 +20,7 @@
 <!-- End Header -->
 <!-- Cart -->
 <!-- Sidebar menu -->
-@section('sidemenu')
-    @include('homePartials.sidemenu')
-@show
+
 
 <!-- Sidebar menu End-->
 <!-- Home content-->
@@ -30,7 +34,7 @@
 <!-- Home content End-->
 
 <!-- Footer -->
-@include('homePartials.footer')
+{{--@include('homePartials.footer')--}}
 {{--@include('homePartials.instafooter')--}}
 <!-- Footer End-->
 
