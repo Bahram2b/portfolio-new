@@ -7,7 +7,6 @@
 @section('title', 'Photo')
 
 
-@section('title', 'Photos')
 @section('otherside', 'Video')
 @section('link', '/video-portfolio')
 @section('sec-1', 'Portraits')

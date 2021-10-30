@@ -66,7 +66,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title main-title-bold" id="exampleModalLabel">Adding a new Video </h5>
+                        <h5 class="modal-titleadd" id="exampleModalLabel">Adding a new Video </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -91,7 +91,7 @@
                                     <option value="Motion">Motions</option>
                                     <option value="Music">Music Videos</option>
                                 </select><br>
-                                <label for="description">description</label>
+                                <label for="description">Description</label>
 
                                 <input type="text" class="form-control" id="description" aria-describedby="emailHelp" value="This is the description of the " name="description">
                                 <label for="link">link</label>
@@ -101,7 +101,7 @@
 
 
                             <div class="form-group">
-                                <label for="thumbnail">عکس</label>
+                                <label for="thumbnail">Thumbnail Cover</label>
                                 <input type="file" class="form-control"   name="thumbnail">
 
                             </div>

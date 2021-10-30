@@ -12,7 +12,7 @@
     <div class="container">
         <div class="first-content">
             <h1 class="">Morteza Jelokhani</h1>
-            <span class=""><em>@yield('portfolio','Photos') Portfolio</em></span>
+            <span class=""><em>@yield('title') Portfolio</em></span>
             <div class="primary-button">
                 {{--                <a href="#services">Discover More</a>--}}
                 <a class="orange" href="#sec-1">@yield('but-1')</a>

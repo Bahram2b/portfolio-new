@@ -6,7 +6,7 @@
 
         <h3>Profile info</h3>
 
-        <form action="{{route('profile.update')}}" method="post"  class=" perfont persian" enctype="multipart/form-data">
+        <form action="{{route('profile.update')}}" method="post" enctype="multipart/form-data">
             @csrf
             <img id="showImage" src="{{ (!empty($user->profile_photo_path))?url('upload/user_images/'.$user->profile_photo_path):(asset('upload/no_image.png')) }}" class="img-circle" width="85px"  alt="">
 {{--           @if(!empty($user->profile_photo_path))--}}
@@ -21,7 +21,7 @@
             </div>
 
             <div class="md-form md-outline">
-                <label data-error="wrong"  data-success="right" for="name">نام</label>
+                <label data-error="wrong"  data-success="right" for="name">Name</label>
                 <input  type="text" id="name" value="{{$user->name}}" name="name" class="form-control col-5">
             </div>
             <div class="md-form md-outline mb-5">

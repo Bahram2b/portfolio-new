@@ -1,25 +1,36 @@
 @extends('layouts.app')
 @section('admin')
+<div class="container">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HD7PBZJ273"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-{{--<div class="row">--}}
-{{--    <div class="col-lg-3 col-md-6">--}}
-{{--        <div class="ibox bg-dark color-white widget-stat">--}}
-{{--            <div class="ibox-body">--}}
-{{--                <h2 class="m-b-5 font-strong">201</h2>--}}
-{{--                <div class="m-b-5">تعداد محصولات</div><i class="ti-shopping-cart widget-stat-icon"></i>--}}
-{{--                <div><i class="fa fa-level-up m-l-5"></i> <small>افزایش 25%</small></div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <div class="col-lg-3 col-md-6">--}}
-{{--        <div class="ibox bg-dark color-white widget-stat">--}}
-{{--            <div class="ibox-body">--}}
-{{--                <h2 class="m-b-5 font-strong">1250</h2>--}}
-{{--                <div class="m-b-5">بازدید</div><i class="ti-bar-chart widget-stat-icon"></i>--}}
-{{--                <div><i class="fa fa-level-up m-l-5"></i><small>افزایش 17%</small></div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+        gtag('config', 'G-HD7PBZJ273');
+    </script>
+    
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="ibox  widget-stat">
+            <div class="ibox-body">
+                <h2 class="m-b-5 font-strong">{{$videocount}}</h2>
+                <div class="m-b-5">Number of videos</div><i class="fa fa-video widget-stat-icon"></i>
+{{--                <div><i class="fa fa-level-up m-l-5"></i> <small>زيادة ب 25%</small></div>--}}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="ibox  widget-stat">
+            <div class="ibox-body">
+                <h2 class="m-b-5 font-strong">{{$photocount}}</h2>
+                <div class="m-b-5">Number of photos</div><i class="fa fa-picture-o widget-stat-icon"></i>
+{{--                <div><i class="fa fa-level-up m-l-5"></i> <small>زيادة ب 25%</small></div>--}}
+            </div>
+        </div>
+    </div>
+
+
 {{--    <div class="col-lg-3 col-md-6">--}}
 {{--        <div class="ibox bg-dark color-white widget-stat">--}}
 {{--            <div class="ibox-body">--}}
@@ -38,5 +49,8 @@
 {{--            </div>--}}
 {{--        </div>--}}
 {{--    </div>--}}
-{{--</div>--}}
+</div>
+
+</div>
+
 @endsection

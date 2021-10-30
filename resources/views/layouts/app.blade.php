@@ -3,7 +3,7 @@
 
 @auth()
 @section('styles')
-    @include('admin.Partials.styles')
+    @include('admin.partials.styles')
 @show
 
 <!-- START HEADER-->
@@ -41,6 +41,8 @@
     <!-- Footer-->
     <!-- scripts-->
     @section('scripts')
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
      @include('admin.Partials.scripts')
     @show
     <!-- scripts-->

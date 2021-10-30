@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/js/videojs.js')}}">
     <!--===============================================================================================-->
 @endsection
-@section('title', 'Videos')
+@section('title', 'Video')
 @section('otherside', 'Photo')
 @section('link', '/photo-portfolio')
 @section('sec-1', 'Cinematic videos')

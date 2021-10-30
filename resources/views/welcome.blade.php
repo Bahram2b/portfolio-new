@@ -33,34 +33,8 @@
     <section class="screen left tiles">
 
 {{--        <img src="frontend/landing/img/left.jpg" />--}}
-        <a class="svg-photo" href="{{route('Photo.Portfolio')}}"><svg
-            x="0px" y="0px" width="160px" height="250px" viewBox="0 0 400 500" style="enable-background:new 0 0 455 455;"
-            xml:space="preserve">
 
-            <defs>
-            </defs>
-            <circle class="st0" cx="200" cy="230" r="100"/>
-            <circle class="st1" cx="200" cy="230" r="105">
-                <animate attributeName="r" from="105" to="130" begin="0s" dur="1s" repeatCount="indefinite"/>
-                <animate attributeName="opacity"
-                         from="0.15"
-                         to="0"
-                         dur="1s"
-                         begin="0s"
-                         repeatCount="indefinite"
-                         fill="freeze"
-                         id="circ-anim"
-                />
-            </circle>
-            {{--            <text class="text" x="90" y="70"--}}
-            {{--                  style="fill: #34495e;"--}}
-            {{--                  font-family="Helvetica Neue"--}}
-            {{--                  font-weight="bold"--}}
-            {{--                  font-size="55">--}}
-            {{--                Tap here--}}
-            {{--            </text>--}}
-
-</svg></a>
+        <a class="mobilelink" href="{{route('Photo.Portfolio')}}" style=""></a>
 
         <div class="info">
             <button>
@@ -70,34 +44,8 @@
 
     </section>
     <section class="screen right">
-        <a class="svg-photo" href="{{route('Video.Portfolio')}}"><svg
-                x="0px" y="0px" width="160px" height="250px" viewBox="0 0 400 500" style="enable-background:new 0 0 455 455;"
-                xml:space="preserve">
+        <a class="mobilelink" href="{{route('Video.Portfolio')}}" style=""></a>
 
-            <defs>
-            </defs>
-                <circle class="st0" cx="200" cy="230" r="100"/>
-                <circle class="st1" cx="200" cy="230" r="105">
-                    <animate attributeName="r" from="105" to="130" begin="0s" dur="1s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity"
-                             from="0.15"
-                             to="0"
-                             dur="1s"
-                             begin="0s"
-                             repeatCount="indefinite"
-                             fill="freeze"
-                             id="circ-anim"
-                    />
-                </circle>
-                {{--            <text class="text" x="90" y="70"--}}
-                {{--                  style="fill: #34495e;"--}}
-                {{--                  font-family="Helvetica Neue"--}}
-                {{--                  font-weight="bold"--}}
-                {{--                  font-size="55">--}}
-                {{--                Tap here--}}
-                {{--            </text>--}}
-
-</svg></a>
         <div class="info">
             <button>
                 <a href="{{route('Video.Portfolio')}}" class="button"></a>

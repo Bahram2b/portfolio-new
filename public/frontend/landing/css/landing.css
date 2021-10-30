@@ -194,20 +194,20 @@ button {
 
         }
 
-    .svg-photo{
-        position: absolute!important;
-        left: 27%!important;
-        top: 20%!important;
-    }
-    .svg-video{
-        position: absolute!important;
-        left: 29%!important;
-        top: 20%!important;
-    }
+.mobilelink{
+    position: absolute;
+    min-height: 10vh;
+    left: 10%;
+    display: block;
+    align-content: center;
+    padding: 290px 190px;
 
-                      .st0{opacity:0.15;fill: rgba(255, 90, 0, 0.61)
-                      }
-    .st1{opacity:1;fill:none;stroke: rgb(255, 87, 0);stroke-width:10;stroke-miterlimit:10;}
+}
+
+
+    /*                  .st0{opacity:0.15;fill: rgba(255, 90, 0, 0.61)*/
+    /*                  }*/
+    /*.st1{opacity:1;fill:none;stroke: rgb(255, 87, 0);stroke-width:10;stroke-miterlimit:10;}*/
 
     /*.text {*/
     /*    animation: bounce 1s linear infinite;*/

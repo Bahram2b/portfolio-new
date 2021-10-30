@@ -26,6 +26,17 @@ class ProfileController extends Controller
         }
 
     }
+    public function Logout()
+    {
+
+        Auth::logout();
+        $notification=array(
+            'messege'=>'Successfully Logout',
+            'alert-type'=>'success'
+        );
+        return Redirect()->route('login')->with($notification);
+
+    }
 
     public function AdminPassUpdate(request $request)
     {

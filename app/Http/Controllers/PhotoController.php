@@ -50,13 +50,18 @@ class PhotoController extends Controller
 
 
 
-    public function create()
-    {
-//        return file('resources/views/ajaxfile.php');
-    }
+
 
     public function store(Request $request)
     {
+//        $validatedData = $request->validate([
+//            'title' => 'required',
+//
+//        ], [
+//            'title.required' => 'Name is required',
+//
+//        ]);
+
         $photo= new Photo();
         $photo->description=$request->description;
         $photo->title=$request->title;
@@ -107,11 +112,28 @@ class PhotoController extends Controller
         if ($request->renew) {
             $data->created_at=Carbon::now()->timestamp;
         }
+        $file=$request->file('newimage');
+        if (!empty($file)) {
+            $pathdelete="backend/img/photos/originals/".$data->image;
+            $pathdeletethumbnail="backend/img/photos/thumbnails/".$data->thumbnail;
+            unlink($pathdelete);
+            unlink($pathdeletethumbnail);
+
+            $image = time() .$file->getClientOriginalName();
+            $thumbnail = "thumbnail".$image;
+
+            Image::make($file)->fit(300,180)->save('backend/img/photos/thumbnails/'.$thumbnail);
+            $file->move("backend/img/photos/originals/", $image);
+            $data->image = $image;
+
+            $data->thumbnail = $thumbnail;
+
+        }
         $data->title=$request->title;
         $data->description=$request->description;
         $data->save();
         $notification=array(
-            'message'=>'Info Edited bitch',
+            'message'=>'Photo Details Edited',
             'alert-type'=>'success'
         );
         return Redirect()->back()->with($notification);
@@ -123,7 +145,9 @@ class PhotoController extends Controller
         {
             $photos=Photo::findorfail($id);
             $pathdelete="backend/img/photos/originals/".$photos->image;
+            $pathdeletethumbnail="backend/img/photos/thumbnails/".$photos->thumbnail;
             unlink($pathdelete);
+            unlink($pathdeletethumbnail);
             Photo::destroy($id);
             $notification=array(
                 'message'=>'Photo deleted',

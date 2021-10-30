@@ -2,8 +2,8 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClipController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
@@ -57,14 +57,22 @@ Route::get('/video-portfolio', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
         $user = User::find(Auth::user()->id);
+        $photocount=Photo::all()->count();
+        $videocount=Clip::all()->count();
 
-            return view('admin.index',compact('user'));})->name('Dashboard');
-// Admin routes
+            return view('admin.index',compact('user','photocount','videocount'));})->name('Dashboard');
+// Admin Pages
+Route::middleware(['auth:sanctum', 'verified'])->get('/background/{section}', [HomeController::class,'index']);
+//Route::middleware(['auth:sanctum', 'verified'])->get('/desktop/background/{section}', [HomeController::class,'desktopindex']);
+Route::middleware(['auth:sanctum', 'verified'])->post('background/update/{filename}', [HomeController::class,'bgupdate'])->name('Background.Update');
+//
+//Route::middleware(['auth:sanctum', 'verified'])->post('/mobile/background/mainupdate', [HomeController::class,'mainupdate'])->name('mobile.main.update');
+
+// Admin Photo
 Route::middleware(['auth:sanctum', 'verified'])->get('/photo/management/{cat}', [PhotoController::class,'index'])->name('Photo.index');
 Route::post('/photo/add', [PhotoController::class,'store'])->name('Photo.Store');
-Route::post('/photo/edit', [PhotoController::class,'create'])->name('Photo.Edit');
 Route::middleware(['auth:sanctum', 'verified'])->get('delete/photo/{id}', [PhotoController::class,'destroy'])->name('Photo.Destroy');
-Route::middleware(['auth:sanctum', 'verified'])->get('photo/management/update/{id}', [PhotoController::class,'update'])->name('Photo.Update');
+Route::middleware(['auth:sanctum', 'verified'])->post('photo/management/update/{id}', [PhotoController::class,'update'])->name('Photo.Update');
 
 // Admin Clips
 Route::middleware(['auth:sanctum', 'verified'])->get('/clip/management/{cat}', [ClipController::class,'index'])->name('Clip.index');
@@ -77,4 +85,4 @@ Route::get('/Admin/ChangeProfile/', [ProfileController::class,'AdminChangeProfil
 Route::post('/Admin/UpdatePassword/', [ProfileController::class,'AdminPassUpdate'])->name('password.update');
 Route::post('/Admin/UpdateProfile/', [ProfileController::class,'AdminProfileUpdate'])->name('profile.update');
 
-Route::get('/category/logout', [CategoryController::class,'Logout'])->name('user.logout');
+Route::get('/user/logout', [ProfileController::class,'Logout'])->name('user.logout');

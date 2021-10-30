@@ -201,11 +201,7 @@ left: 190px;
         display: block!important;
         margin-bottom: 80px!important;
         transform-origin: left top 0;
-
-
-
         left: 190px;
-
     }
 
     .title-font{
@@ -231,8 +227,9 @@ left: 190px;
 
     .ScrollDown_box {
         position: absolute;
+        position: absolute;
         left: 50%;
-        top: 90%;
+        top: 92%;
         margin-left: -50px;
     }
     a.btn_ScrollDown {
@@ -251,14 +248,14 @@ left: 190px;
         position: absolute;
         top: 0;
         left: 50%;
-        width: 30px;
-        height: 30px;
+        width: 17px;
+        height: 17px;
         margin-left: -15px;
-        border-left: 4px solid #ff6817;
-        border-bottom: 4px solid #ff6817;
+        border-left: 3px solid #ff6817;
+        border-bottom: 3px solid #ff6817;
         -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg);
-        -webkit-animation: sdb 1.5s infinite;
+        -webkit-animation: sdb 2s infinite;
         animation: sdb 1.5s infinite;
         box-sizing: border-box;
     }
@@ -267,12 +264,12 @@ left: 190px;
         animation-delay: 0s;
     }
     a.btn_ScrollDown span:nth-of-type(2) {
-        top: 16px;
+        top: 12px;
         -webkit-animation-delay: .15s;
         animation-delay: .15s;
     }
     a.btn_ScrollDown span:nth-of-type(3) {
-        top: 32px;
+        top: 25px;
         -webkit-animation-delay: .3s;
         animation-delay: .3s;
     }
@@ -578,15 +575,12 @@ left: 190px;
 
 
   background-color: #060607;
-  padding: 15px 24px;
-  border-radius: 2px ;
-    border: 1px solid #ff6400;
-  text-transform: uppercase;
-margin:5px;
+
+
+
 
   color: #fcbb93;
 
-  text-decoration: none;
 
 }
 

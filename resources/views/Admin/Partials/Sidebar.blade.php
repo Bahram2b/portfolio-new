@@ -2,28 +2,30 @@
     <div id="sidebar-collapse">
         <div class="admin-block d-flex">
             <div>
-                <img src="{{url('upload/user_images/'.$userphoto)}}" width="45px" />
+                <img src="{{url('upload/user_images/'.$userphoto)}}" style="max-height: 70px; max-width: 120px "/>
 
             </div>
             <div class="admin-info">
                 <div class="font-strong">{{Auth::user()->name}}</div><small>Admin</small></div>
         </div>
         <ul class="side-menu metismenu">
+            <li class="heading">Site Links</li>
             <li>
                 <a class="active" href="{{route('Dashboard')}}"><i class="sidebar-item-icon fa fa-dashboard"></i>
                     <span class="nav-label">Dashboard</span>
                 </a>
-                <a class="active" href={{url('/')}}>
+                <a class="active" href={{url('/')}}><i class="sidebar-item-icon fa fa-home"></i>
+
                     <span class="nav-label">Welcome Page</span>
                 </a>
-                <a class="active" href={{route('Video.Portfolio')}}>
+                <a class="active" href={{route('Video.Portfolio')}}><i class="sidebar-item-icon fa fa-photo"></i>
                     <span class="nav-label">Videos Portfolio</span>
                 </a>
-                <a class="active" href={{route('Photo.Portfolio')}}>
+                <a class="active" href={{route('Photo.Portfolio')}}><i class="sidebar-item-icon fa fa-video-camera"></i>
                     <span class="nav-label">Photos Portfolio</span>
                 </a>
             </li>
-            <li class="heading">Portfolio</li>
+            <li class="heading">Portfolio Edit</li>
             <li>
                 <a href="javascript:;"><i class="sidebar-item-icon fa fa-photo"></i>
                     <span class="nav-label">Photos</span><i class="fa fa-angle-left arrow"></i></a>
@@ -84,23 +86,56 @@
                 </ul>
             </li>
 
-            <li class="heading">PAGES</li>
+            <li class="heading">Pages Setup</li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-envelope"></i>
-                    <span class="nav-label">Coming Soon</span><i class="fa fa-angle-left arrow"></i></a>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-mobile-phone" style="font-size: 26px"></i>
+                    <span class="nav-label">Mobile version</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="">Videos</a>
+                        <a href="{{url('/background/mobile-banner')}}">Banner Background</a>
                     </li>
                     <li>
-                        <a href="">Photos</a>
+                        <a href="{{url('/background/mobile-main')}}">Main background</a>
                     </li>
-                    <li>
-                        <a href="">Welcome Page</a>
-                    </li>
+
                 </ul>
 
             </li>
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-desktop"></i>
+                    <span class="nav-label">Desktop version</span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                        <a href="{{url('/background/desktop-banner')}}">Banner Background</a>
+                    </li>
+                    <li>
+                        <a href="{{url('/background/1-3-4-sections')}}">1-3-4 Sections Background</a>
+                    </li>
+                    <li>
+                        <a href="{{url('/background/second-section')}}">Second Section Background</a>
+                    </li>
+
+
+
+                </ul>
+
+            </li>
+{{--            <li>--}}
+{{--                <a href="javascript:;"><i class="sidebar-item-icon fa fa-envelope"></i>--}}
+{{--                    <span class="nav-label">Mobile version</span><i class="fa fa-angle-left arrow"></i></a>--}}
+{{--                <ul class="nav-2-level collapse">--}}
+{{--                    <li>--}}
+{{--                        <a href="">Mobile</a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <a href="">Photos</a>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <a href="">Welcome Page</a>--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
+
+{{--            </li>--}}
             <li>
                 <a class="active orange" href="{{route('user.logout')}}"><i class="sidebar-item-icon fa fa-power-off"></i>
                     <span class="nav-label">Logout</span>

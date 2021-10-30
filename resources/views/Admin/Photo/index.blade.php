@@ -39,10 +39,11 @@
                                 <td class="hidden">{{$row->id }}</td>
                                 <td class="text-center">{{ $row->title }}</td>
                                 <td class="text-center">{{ $row->category }}</td>
-{{--                                <td class="text-center hidden">{{ $row->image }}</td>--}}
 
-                                <td height="50px;" width="160px;" class="text-center"> <img src="{{ URL("backend/img/photos/originals/".$row->image) }}" style="max-height:120px " > </td>
+
+                                <td height="50px;" width="160px;" class="text-center"> <img src="{{ URL("backend/img/photos/thumbnails/".$row->thumbnail) }}" style="max-height:120px " > </td>
                                 <td>{{Str::limit($row->description, 40)}}</td>
+                                <td class="hidden">{{ $row->image }}</td>
                                 <td class="text-center">{{ $row->created_at->diffForHumans() }}</td>
                                 <td class="text-center">
                                    <button class="btn btn-sm btn-info editingTRbutton" type="button"  data-bs-toggle="modal" data-bs-target="#editModal">Edit</button>
@@ -63,22 +64,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Adding new Photo </h5>
+                    <h5 class="modal-titleadd" id="exampleModalLabel">Adding new Photo </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                        <form method="post" action="{{route('Photo.Store')}}" enctype="multipart/form-data" >
+                        <form method="post" action="{{route('Photo.Store')}}" enctype="multipart/form-data" id="myForm" onsubmit="return validateForm()" >
                             @csrf
-                    <div class="form-group">
+                    <div class="form-group col-xl-11">
                         <label for="title">Title</label>
                         <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="title" name="title">
                         <label for="category">Category</label>
@@ -94,9 +86,11 @@
                     </div>
 
 
-                    <div class="form-group">
-                        <label for="image">Image</label>
-                        <input type="file" class="form-control" aria-describedby="emailHelp"  name="image">
+                    <div class="form-group col-xl-7">
+                        <label for="image">Photo</label>
+                        <img id="showImage" src=""  style="max-width: 380px; max-height: 290px"   alt="">
+
+                        <input type="file" id="img" class="form-control" aria-describedby="emailHelp"  name="image" required >
 
                     </div>
 
@@ -117,22 +111,24 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="ModalLabel">Modal title</h4>
+                    <h5 class="modal-title" id="ModalLabel">Edit</h5>
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
 
-                    <form action="" method="GET" enctype="multipart/form-data"  method="POST" id="ModalForm">
+                    <form action=""  enctype="multipart/form-data"  method="POST" id="ModalForm" onsubmit="return validateFormedit()">
                         {{csrf_field()}}
                         <input type="hidden" id="editId" value="">
-                        <div class="form-group">
+                        <div class="form-group col-xl-11">
                             <label for="title">Title</label>
                             <input type="text" name="title" class="form-control" id="edittitle" placeholder="title">
                         </div>
-{{--                        <img src="{{ URL("backend/img/photos/originals/".$row->image) }}" id="editimage" style="max-height:120px " >--}}
-                        <div class="form-group">
+
+
+
+                        <div class="form-group col-xl-11">
                             <label for="category">Category</label>
                             <select class="form-control" id="editcategory" name="category">
                                 <option value="Portrait">Portrait</option>
@@ -140,8 +136,23 @@
                                 <option value="Photo Manipulation">Manipulation photos</option>
                                 <option value="Music">Music Covers</option>
                             </select>
-                            <div class="form-group">
-                                <label for="editdescription">description</label>
+                            <input type="hidden" id="oldimage" name="oldimage"  value="">
+
+                            <label for="showImageedit" style="padding-right: 20px">Current photo</label>
+                            <img id="showImageedit" src=""  style="max-width: 250px; max-height: 160px"  alt=""><br>
+                                <label for="newimage" style="padding-right: 20px">New photo</label>
+                                <img id="showImagenew" src="" style="max-width: 250px; max-height: 160px"  alt="">
+
+                            <div class="form-group col-xl-7">
+
+
+
+                                {{--                        <input type="file" id="img" class="form-control" aria-describedby="emailHelp"  name="image" required oninvalid="this.setCustomValidity('Please select the photo')">--}}
+                                <input type="file" id="imgnew" class="form-control" aria-describedby="emailHelp"  name="newimage" >
+
+                            </div>
+                            <div class="form-group col-xl-11">
+                                <label for="editdescription">Description</label>
                                 <input type="text" name="description" class="form-control" id="editdescription" placeholder="description">
                             </div>
                             <input type="checkbox" id="renew" name="renew" >
@@ -173,6 +184,109 @@
 @section('scripts')
     @parent
     <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+
+        $("#img").change(function() {
+            readURL(this);
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".modal").on("hidden.bs.modal", function() {
+                $('#showImagenew').attr('src', '');
+            });
+        });
+    </script>
+    <script>
+        function readURLd(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#showImagenew').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+
+        $("#imgnew").change(function() {
+            readURLd(this);
+        });
+    </script>
+    <script type="text/javascript">
+       function validateForm() {
+            var formData = new FormData();
+            var file = document.getElementById("img").files[0];
+
+            formData.append("Filedata", file);
+            var t = file.type.split('/').pop().toLowerCase();
+            if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp") {
+                alert('Please select a valid image file');
+                document.getElementById("img").value = '';
+                return false;
+            }
+
+            var fsize = (file.size / 1024 / 1024).toFixed(4);
+
+            if (fsize > 4 ) {
+                alert('Max Upload size is 4MB only');
+                document.getElementById("img").value = '';
+                $('#showImage').attr('src','');
+                return false;
+            }
+            }
+           function validateFormedit() {
+           var formDataedit = new FormData();
+           var fileedit = document.getElementById("imgnew").files[0];
+           formDataedit.append("Filedata", fileedit);
+           var tedit = fileedit.type.split('/').pop().toLowerCase();
+           if (tedit != "jpeg" && tedit != "jpg" && tedit != "png" && tedit != "bmp") {
+               alert('Please select a valid image file');
+               document.getElementById("imgnew").value = '';
+               return false;
+           }
+           var fileeditsize = (fileedit.size / 1024 / 1024).toFixed(4);
+           if (fileeditsize > 4 ) {
+               alert('Max Upload size is 4MB only');
+               document.getElementById("imgnew").value = '';
+               $('#showImageedit').attr('src','');
+               return false;
+           }
+            return true;
+        }
+    </script>
+{{-- <script type="text/javascript">--}}
+{{--        function validateFormEdit() {--}}
+{{--            var formDataedit = new FormData();--}}
+{{--            var fileedit = document.getElementById("imgnew").files[0];--}}
+{{--            var tedit = fileedit.type.split('/').pop().toLowerCase();--}}
+{{--            if (tedit != "jpeg" && tedit != "jpg" && tedit != "png" && tedit != "bmp") {--}}
+{{--                alert('Please select a valid image file');--}}
+{{--                document.getElementById("imgnew").value = '';--}}
+{{--                return false;--}}
+{{--            }--}}
+{{--            var fileeditsize = (fileedit.size / 1024 / 1024).toFixed(4);--}}
+{{--            if (fileeditsize > 4 ) {--}}
+{{--                alert('Max Upload size is 4MB only');--}}
+{{--                document.getElementById("imgnew").value = '';--}}
+{{--                $('#showImageedit').attr('src','');--}}
+{{--                return false;--}}
+{{--            }--}}
+{{--            return true;--}}
+{{--        }--}}
+{{--    </script>--}}
+    <script>
         $(function() {
             //Take the data from the TR during the event button
             $('table').on('click', 'button.editingTRbutton',function (ele) {
@@ -183,8 +297,8 @@
                 var id = tr.cells[1].textContent;
                 var title = tr.cells[2].textContent;
                 var category = tr.cells[3].textContent;
-                var image = tr.cells[4].textContent;
                 var description = tr.cells[5].textContent;
+                var image = tr.cells[6].textContent;
                 // var phone = tr.cells[4].textContent;
                 // var level = tr.cells[5].textContent;
 
@@ -193,8 +307,10 @@
                 $('#edittitle').val(title);
                 $("#editcategory").val(category).attr('Portrait', 'Photo Manipulation','Product Photography','Music');
 
-                $('#editimage').val(image);
+                // $('#editimage').val(image);
                 $('#editdescription').val(description);
+                $('#oldimage').val(image);
+                $('#showImageedit').attr('src', 'http://127.0.0.1:8000/backend/img/photos/originals/'+image);
                 // $('#editPhone').val(phone);
                 // $('#editId').val(id);
                 // $("#editLevel").val(level).attr('selected', 'selected');
