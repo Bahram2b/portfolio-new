@@ -43,6 +43,7 @@
                         <td height="50px;" width="160px;" class="text-center"> <img src="{{ URL("backend/img/clips/thumbnails/".$row->thumbnail) }}" style="max-height:120px " > </td>
                         {{--                                <td class="text-center hidden">{{ $row->image }}</td>--}}
                         <td>{{Str::limit($row->description, 40)}}</td>
+                        <td class="hidden">{{ $row->thumbnail }}</td>
                         <td>{{Str::limit($row->link,30)  }}</td>
 
 
@@ -91,6 +92,7 @@
                                     <option value="Motion">Motions</option>
                                     <option value="Music">Music Videos</option>
                                 </select><br>
+
                                 <label for="description">Description</label>
 
                                 <input type="text" class="form-control" id="description" aria-describedby="emailHelp" value="This is the description of the " name="description">
@@ -102,7 +104,9 @@
 
                             <div class="form-group">
                                 <label for="thumbnail">Thumbnail Cover</label>
-                                <input type="file" class="form-control"   name="thumbnail">
+                                <img id="showImage" src=""  style="max-width: 380px; max-height: 290px"   alt="">
+
+                                <input type="file" id="img" class="form-control" aria-describedby="emailHelp"  name="thumbnail" required >
 
                             </div>
 
@@ -130,11 +134,11 @@
                     </div>
                     <div class="modal-body">
 
-                        <form action="" method="GET" enctype="multipart/form-data"  method="POST" id="ModalForm">
+                        <form action=""  enctype="multipart/form-data"  method="POST" id="ModalForm">
                             {{csrf_field()}}
                             <input type="hidden" id="editId" value="">
                             <div class="form-group">
-                                <label for="title">title</label>
+                                <label for="title">Title</label>
                                 <input type="text" name="title" class="form-control" id="edittitle" placeholder="title">
                             </div>
                             {{--                        <img src="{{ URL("backend/img/photos/originals/".$row->image) }}" id="editimage" style="max-height:120px " >--}}
@@ -150,7 +154,11 @@
                                 <div class="form-group">
                                     <label for="description">Description</label>
                                     <input type="text" name="description" class="form-control" id="editdescription" >
-
+                                    <label for="showImageedit" style="padding-right: 20px">Current photo</label>
+                                    <img id="showImageedit" src=""  style="max-width: 250px; max-height: 160px"  alt=""><br>
+                                    <label for="newimage" style="padding-right: 20px">New photo</label>
+                                    <img id="showImagenew" src="" style="max-width: 250px; max-height: 160px"  alt="">
+                                    <input type="file" id="imgnew" class="form-control" aria-describedby="emailHelp"  name="newimage" >
                                     <label for="link">link</label>
                                     <input type="text" class="form-control" id="editlink"   name="link">
                                 </div>
@@ -178,7 +186,47 @@
 @endsection
 @section('scripts')
     @parent
+    <script>
+        $(document).ready(function() {
+            $(".modal").on("hidden.bs.modal", function() {
+                $('#showImagenew').attr('src', '');
+            });
+        });
+    </script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
+                reader.onload = function(e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+
+        $("#img").change(function() {
+            readURL(this);
+        });
+    </script>
+    <script>
+        function readURLd(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#showImagenew').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+
+        $("#imgnew").change(function() {
+            readURLd(this);
+        });
+    </script>
 <script>
     $(function() {
         //Take the data from the TR during the event button
@@ -192,7 +240,8 @@
             var category = tr.cells[3].textContent;
             // var image = tr.cells[3].textContent;
             var description = tr.cells[5].textContent;
-            var link = tr.cells[6].textContent;
+            var image = tr.cells[6].textContent;
+            var link = tr.cells[7].textContent;
             // var level = tr.cells[5].textContent;
 
             //Prefill the fields with the gathered information
@@ -202,7 +251,11 @@
 
             // $('#editimage').val(image);
             $('#editdescription').val(description);
+            $('#oldimage').val(image);
             $('#editlink').val(link);
+
+            $('#showImageedit').attr('src', 'https://mortezajelokhani.com/backend/img/clips/thumbnails/'+image);
+            // $('#showImageedit').attr('src', 'http://127.0.0.1:8000/backend/img/clips/thumbnails/'+image);
             // $('#editPhone').val(phone);
             // $('#editId').val(id);
             // $("#editLevel").val(level).attr('selected', 'selected');

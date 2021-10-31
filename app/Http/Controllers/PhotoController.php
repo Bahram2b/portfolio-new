@@ -15,7 +15,7 @@ class PhotoController extends Controller
       switch ($cat){
           case('manipulations'): $photo = Photo::latest()->where('category', "Photo Manipulation")->paginate(15);
           break;
-          case('index'):  $photo=Photo::latest()->paginate(15);
+          case('index'):  $photo=Photo::latest()->simplePaginate(15);
               break;
           case('portraits'):$photo=Photo::latest()->where('category',"Portrait")->paginate(15);
               break;

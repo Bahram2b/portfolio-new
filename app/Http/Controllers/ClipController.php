@@ -85,6 +85,18 @@ class ClipController extends Controller
         if ($request->renew) {
             $data->created_at=Carbon::now()->timestamp;
         }
+        $file=$request->file('newimage');
+        if (!empty($file)) {
+            $pathdeletethumbnail="backend/img/clips/thumbnails/".$data->thumbnail;
+            unlink($pathdeletethumbnail);
+
+            $image = time() .$file->getClientOriginalName();
+            $thumbnail = "thumbnail".$image;
+
+            Image::make($file)->fit(300,180)->save('backend/img/clips/thumbnails/'.$thumbnail);
+            $data->thumbnail = $thumbnail;
+
+        }
         $data->description=$request->description;
         $data->link=$request->link;
         $data->save();

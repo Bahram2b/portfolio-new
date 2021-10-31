@@ -78,7 +78,7 @@ Route::middleware(['auth:sanctum', 'verified'])->post('photo/management/update/{
 Route::middleware(['auth:sanctum', 'verified'])->get('/clip/management/{cat}', [ClipController::class,'index'])->name('Clip.index');
 Route::post('/clip/Add', [ClipController::class,'store'])->name('Clip.Store');
 Route::middleware(['auth:sanctum', 'verified'])->get('delete/clip/{id}', [ClipController::class,'destroy'])->name('Clip.Destroy');
-Route::middleware(['auth:sanctum', 'verified'])->get('clip/management/clipupdate/{id}', [ClipController::class,'update'])->name('Clip.Update');
+Route::middleware(['auth:sanctum', 'verified'])->post('clip/management/clipupdate/{id}', [ClipController::class,'update'])->name('Clip.Update');
 //Admin Profile
 Route::get('/Admin/ChangePassword/', [ProfileController::class,'AdminChangePass'])->name('admin.pass');
 Route::get('/Admin/ChangeProfile/', [ProfileController::class,'AdminChangeProfile'])->name('admin.profile');

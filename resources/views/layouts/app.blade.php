@@ -1,5 +1,5 @@
 
-
+@php( $userphoto = Auth::user()->profile_photo_path)
 
 @auth()
 @section('styles')
@@ -7,22 +7,22 @@
 @show
 
 <!-- START HEADER-->
-
-   @php( $userphoto = Auth::user()->profile_photo_path)
-
 @section('header')
-@include('admin.Partials.Header')
+    @include('admin.partials.header')
 @show
 <!-- END HEADER-->
+
+
+
 @endauth
 <body class="fixed-navbar">
 <div class="page-wrapper">
     <!-- START SIDEBAR-->
-    @auth()
+
 @section('sidebar')
-@include('admin.Partials.Sidebar')
+@include('admin.partials.sidebar')
 @show
-@endauth
+
 <!-- END SIDEBAR-->
     <!-- START PAGE CONTENT-->
     <div class="content-wrapper">
@@ -43,7 +43,7 @@
     @section('scripts')
         <!-- Global site tag (gtag.js) - Google Analytics -->
 
-     @include('admin.Partials.scripts')
+     @include('admin.partials.scripts')
     @show
     <!-- scripts-->
 </div>

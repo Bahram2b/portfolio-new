@@ -1,36 +1,108 @@
-<!DOCTYPE html>
-<html lang="en" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width initial-scale=1.0">
-    <title>@yield('title','Admin Panel')</title>
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet"/>
-{{--    <link href="{{asset('v4/css/bootstrap.min.css')}}" rel="stylesheet"/>--}}
-        <link href="{{asset('css/fontawesome.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('backend/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('backend/vendors/themify-icons/css/themify-icons.css')}}" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/angular-toastr/2.1.1/angular-toastr.css" rel="stylesheet" />
-
-
-    <!-- PLUGINS STYLES-->
-{{--    <link href="{{asset('backend/vendors/jvectormap/jquery-jvectormap-2.0.3.css')}}" rel="stylesheet" />--}}
-
-    <link href="{{asset('backend/css/main.css')}}" rel="stylesheet" />
 </head>
 <header class="header">
     <div class="page-brand">
 
-            <span class="brand-mini">AC</span>
+            <span class="brand-mini"><img src="{{asset('backend/img/mory-logowhite.png')}}" width="70px" height="60px" alt=""></span>
             <span class="brand text-decoration-none">
                        Admin Panel<span class="brand-tip"></span>
                     </span>
 
     </div>
     <div class="flexbox flex-1">
+
         <!-- START TOP-LEFT TOOLBAR-->
         <style>
+            .dropdown {
+                display: inline-block;
+                position: relative;
+                direction:ltr!important;
+                padding: 5px;
+
+            }
+
+            .dd-button {
+                background: transparent;
+                display: inline-block;
+             color: #ff6817;
+                border-radius: 4px;
+                padding: 10px 30px 10px 20px;
+                font-weight: bold;
+                cursor: pointer;
+                white-space: nowrap;
+            }
+
+            .dd-button:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid #ff6817;
+            }
+
+            /*.dd-button:hover {*/
+            /*    background-color: #eeeeee;*/
+            /*}*/
+
+
+            .dd-input {
+                display: none;
+            }
+
+            .dd-menu {
+                position: absolute;
+                top: 100%;
+                border: 1px solid #000000;
+                border-radius: 4px;
+                padding: 0;
+                margin: 2px 0 0 0;
+                color: #ff6817;
+                box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+                background-color:rgba(80, 84, 88, 0.9);
+                list-style-type: none;
+            }
+
+            .dd-input + .dd-menu {
+                display: none;
+            }
+
+            .dd-input:checked + .dd-menu {
+                display: block;
+            }
+
+            .dd-menu li {
+                padding: 10px 20px;
+                cursor: pointer;
+                white-space: nowrap;
+            }
+
+            .dd-menu li:hover {
+                background-color: rgba(43,43,43,0.92)
+            }
+
+            .dd-menu li a {
+                display: block;
+                margin: -10px -20px;
+                padding: 10px 20px;
+                font-weight: 540;
+            }
+
+            .dd-menu li.divider{
+                padding: 0;
+                border-bottom: 1px solid #000000;
+            }
+            a{
+                text-decoration: none;
+               color: rgba(255,104,23,0.92);
+            }
+            a:hover{
+
+               color: rgba(255,104,23,0.92);
+            }
             .hamb {
                 background-color: transparent;
                 border: none;
@@ -85,157 +157,29 @@
                         </svg>
                     </button></a>
             </li>
-            <li>
-{{--                <form class="navbar-search" action="javascript:;">--}}
-{{--                    <div class="rel">--}}
-{{--                        <input class="form-control" placeholder="جستجو...">--}}
-{{--                        <span class="search-icon"><i class="ti-search"></i></span>--}}
-{{--                    </div>--}}
-{{--                </form>--}}
-            </li>
+
         </ul>
         <!-- END TOP-LEFT TOOLBAR-->
-        <!-- START TOP-RIGHT TOOLBAR-->
-        <ul class="nav navbar-toolbar">
-{{--            <li class="dropdown dropdown-inbox">--}}
-{{--                <a class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa -envelope-o"></i>--}}
-{{--                    <span class="badge badge-primary envelope-badge">9</span>--}}
-{{--                </a>--}}
-{{--                <ul class="dropdown-menu dropdown-menu-left dropdown-menu-media">--}}
-{{--                    <li class="dropdown-menu-header">--}}
-{{--                        <div>--}}
-{{--                            <a class="pull-left" href="mailbox.html">مشاهده همه</a>--}}
-{{--                            <span><strong>9 </strong>پیام جدید</span>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li class="list-group list-group-divider scroller" data-height="240px" data-color="#71808f">--}}
-{{--                        <div>--}}
-{{--                            <a class="list-group-item">--}}
-{{--                                <div class="media">--}}
-{{--                                    <div class="media-img">--}}
-{{--                                        <img src="{{asset('backend/img/users/u1.jpg')}}" />--}}
-{{--                                    </div>--}}
-{{--                                    <div class="media-body text-right">--}}
-{{--                                        <div class="font-strong"> </div>Jeanne Gonzalez<small class="text-muted float-left">Just now</small>--}}
-{{--                                        <div class="font-13">Your proposal interested me.</div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                            <a class="list-group-item">--}}
-{{--                                <div class="media">--}}
-{{--                                    <div class="media-img">--}}
-{{--                                        <img src="{{asset('backend/img/users/u2.jpg')}}" />--}}
-{{--                                    </div>--}}
-{{--                                    <div class="media-body text-right">--}}
-{{--                                        <div class="font-strong"></div>Becky Brooks<small class="text-muted float-left">18 mins</small>--}}
-{{--                                        <div class="font-13">Lorem Ipsum is simply.</div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                            <a class="list-group-item">--}}
-{{--                                <div class="media">--}}
-{{--                                    <div class="media-img">--}}
-{{--                                        <img src="{{asset('backend/img/users/u3.jpg')}}" />--}}
-{{--                                    </div>--}}
-{{--                                    <div class="media-body text-right">--}}
-{{--                                        <div class="font-strong"></div>Frank Cruz<small class="text-muted float-left">18 mins</small>--}}
-{{--                                        <div class="font-13">Lorem Ipsum is simply.</div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                            <a class="list-group-item">--}}
-{{--                                <div class="media">--}}
-{{--                                    <div class="media-img">--}}
-{{--                                        <img src="{{asset('backend/img/users/u4.jpg')}}" />--}}
-{{--                                    </div>--}}
-{{--                                    <div class="media-body text-right">--}}
-{{--                                        <div class="font-strong"></div>Rose Pearson<small class="text-muted float-left">3 hrs</small>--}}
-{{--                                        <div class="font-13">Lorem Ipsum is simply.</div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </li>--}}
-{{--            <li class="dropdown dropdown-notification">--}}
-{{--                <a class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o rel"><span class="notify-signal"></span></i></a>--}}
-{{--                <ul class="dropdown-menu dropdown-menu-left dropdown-menu-media">--}}
-{{--                    <li class="dropdown-menu-header">--}}
-{{--                        <div>--}}
-{{--                            <a class="pull-left" href="javascript:;">مشاهده همه</a>--}}
-{{--                            <span><strong>5</strong> پیام جدید</span>--}}
-{{--                        </div>--}}
+        <label class="dropdown">
 
-{{--                    </li>--}}
-{{--                    <li class="list-group list-group-divider scroller" data-height="240px" data-color="#71808f">--}}
-{{--                        <div>--}}
-{{--                            <a class="list-group-item">--}}
-{{--                                <div class="media">--}}
-{{--                                    <div class="media-img">--}}
-{{--                                        <span class="badge badge-success badge-big"><i class="fa fa-check"></i></span>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="media-body text-right">--}}
-{{--                                        <div class="font-13">4 مهمات انتهت</div><small class="text-muted">22 دقيقة</small></div>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                            <a class="list-group-item">--}}
-{{--                                <div class="media">--}}
-{{--                                    <div class="media-img">--}}
-{{--                                        <span class="badge badge-default badge-big"><i class="fa fa-shopping-basket"></i></span>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="media-body text-right">--}}
-{{--                                        <div class="font-13">لديك 10 أوامر جديدة</div><small class="text-muted">40 دقيقة</small></div>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                            <a class="list-group-item">--}}
-{{--                                <div class="media">--}}
-{{--                                    <div class="media-img">--}}
-{{--                                        <span class="badge badge-danger badge-big"><i class="fa fa-bolt"></i></span>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="media-body text-right">--}}
-{{--                                        <div class="font-13">Server #7 rebooted</div><small class="text-muted">1ساعة</small></div>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                            <a class="list-group-item">--}}
-{{--                                <div class="media">--}}
-{{--                                    <div class="media-img">--}}
-{{--                                        <span class="badge badge-success badge-big"><i class="fa fa-user"></i></span>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="media-body text-right">--}}
-{{--                                        <div class="font-13">مستخدم جديد مسجل</div><small class="text-muted">2 ساعة</small></div>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </li>--}}
-{{--            <div class="dropdown btn-group">--}}
-{{--                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                    Menu <span class="caret"></span>--}}
-{{--                </button>--}}
-{{--                <ul class="dropdown-menu">--}}
-{{--                    <li><a href="#">Action</a></li>--}}
-{{--                    <li><a href="#">Another action</a></li>--}}
-{{--                    <li><a href="#">Something else here</a></li>--}}
-{{--                    <li role="separator" class="divider"></li>--}}
-{{--                    <li><a href="#">Separated link</a></li>--}}
-{{--                </ul>--}}
-{{--            </div>--}}
-            <li class="dropdown dropdown-user">
-                <a class="nav-link dropdown-toggle link" data-toggle="dropdown">
-                    <span></span><i class="fa fa-angle-down m-l-5"></i>{{Auth::user()->name}}
-                    <img src="{{url('upload/user_images/'.$userphoto)}}" />
-                </a>
-                <ul class="dropdown-menu dropdown-menu-left">
-                    <a class="dropdown-item" href="profile.html"><i class="fa fa-user"></i>صفحه پروفایل</a>
-                    <a class="dropdown-item" href="profile.html"><i class="fa fa-cog"></i>تنظیمات</a>
-{{--                    <a class="dropdown-item" href="javascript:;"><i class="fa fa-support"></i>دعم</a>--}}
-                    <li class="dropdown-divider"></li>
-                    <a class="dropdown-item" href="{{route('user.logout')}}"><i class="fa fa-power-off"></i>خروج</a>
-                </ul>
-            </li>
-        </ul>
-        <!-- END TOP-RIGHT TOOLBAR-->
+            <div class="dd-button">
+               <span><img src="{{url('upload/user_images/'.$userphoto)}}" class="rounded-circle" style="max-height: 50px; max-width: 70px; padding: 5px"/></span>
+            </div>
+
+            <input type="checkbox" class="dd-input" id="test">
+
+            <ul class="dd-menu">
+                <li>
+                    <a href="{{route('admin.profile')}}">Personal Info</a></li>
+                <li>
+                    <a href="{{route('admin.pass')}}">Change Password</a>
+                <li class="divider"></li>
+                <li>
+                    <a href="{{route('user.logout')}}">Logout<i class="sidebar-item-icon fa fa-power-off p-2"></i>
+                        <span class="nav-label"></a>
+                </li>
+            </ul>
+
+        </label>
     </div>
 </header>

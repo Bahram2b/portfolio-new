@@ -6,9 +6,9 @@
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="{{asset('frontend/img/mory-logowhite.png')}}"/>
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/font-awesome-4.7.0/css/font-awesome.min.css')}}">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/templatemo-main.css')}}">
     <!--===============================================================================================-->

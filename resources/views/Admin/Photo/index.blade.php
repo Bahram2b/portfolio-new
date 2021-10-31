@@ -310,7 +310,7 @@
                 // $('#editimage').val(image);
                 $('#editdescription').val(description);
                 $('#oldimage').val(image);
-                $('#showImageedit').attr('src', 'http://127.0.0.1:8000/backend/img/photos/originals/'+image);
+                $('#showImageedit').attr('src', 'https://mortezajelokhani.com/backend/img/photos/originals/'+image);
                 // $('#editPhone').val(phone);
                 // $('#editId').val(id);
                 // $("#editLevel").val(level).attr('selected', 'selected');
