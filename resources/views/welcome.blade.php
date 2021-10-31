@@ -4,21 +4,9 @@
     <title>Welcome to Morteza Jelokhani Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-{{--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>--}}
     <script src="{{asset('frontend/js/jquery-3.6.0.min.js')}}" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/landing/css/landing.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/landing/css/loading.css')}}">
-
-    <!--===============================================================================================-->
-{{--        <link rel="stylesheet" type="text/css" href="{{'frontend/landing/css/landing.css'}}">--}}
-<!--===============================================================================================-->
-    <!-- Fonts -->
-
-    <!-- Styles -->
-
-    {{--    <link rel="stylesheet" type="text/css" href="{{'frontend/css/bootstrap.min.css'}}">--}}
-    {{--    <link rel="stylesheet" type="text/css" href="{{'frontend/fonts/font-awesome-4.7.0/css/font-awesome.min.css'}}">--}}
-
 </head>
 <body>
 <div class="load">
@@ -39,6 +27,8 @@
         <div class="info">
             <button>
                 <a href="{{route('Photo.Portfolio')}}" class="button"></a>
+                <a href="{{route('Photo.Portfolio')}}" class="button">Photography</a>
+
             </button>
         </div>
 
@@ -49,18 +39,15 @@
         <div class="info">
             <button>
                 <a href="{{route('Video.Portfolio')}}" class="button"></a>
+
+                <a href="{{route('Video.Portfolio')}}" class="button">Videography</a>
+
             </button>
         </div>
 
     </section>
 </div>
 
-{{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>--}}
-<!--===============================================================================================-->
-{{--<script>window.jQuery || document.write('<script src="{{'js/vendor/jquery-1.11.2.min.js'}}"><\/script>')</script>--}}
-<!--===============================================================================================-->
-{{--<script src="{{'frontend/js/vendor/bootstrap.min.js'}}"></script>--}}
-{{--<script src="{{'frontend/js/plugins.js'}}"></script>--}}
 <script>
     $(window).on('load', function () {
         $(".load").fadeOut("slow");
